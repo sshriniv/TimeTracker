@@ -1,0 +1,1 @@
+$("<tr><td><%=j link_to('View', @work) %></td><td><%= @work.user.lname %>, <%=@work.user.fname %></td><td><%=j link_to(@work.project.name, @work.project) %></td><td><%=@work.datetimeperformed.strftime('%m/%d/%Y %H:%M')%></td><td><%=@work.hours %></td></tr>").insertAfter("tr#headerrow");

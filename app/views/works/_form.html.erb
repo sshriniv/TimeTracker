@@ -1,0 +1,29 @@
+
+<% doajax = false unless (defined? doajax) %>
+<%= form_for(@work, remote: doajax) do |f| %>
+
+  <div class="field form-group">
+    <%= f.label :project_id%>
+    <%= f.collection_select(:project_id, Project.all, :id, :name, prompt: true)%>
+  </div>
+
+  <div>
+    <%= f.label :user_id%>
+    <%= f.collection_select(:user_id, User.all, :id, :to_s, prompt: true)%>
+  </div>
+
+    <div>
+    <%= f.label :datetimeperformed%>
+    <%= f.datetime_select :datetimeperformed %>
+  </div>
+
+  <div>
+	  <%= f.label :hours %>
+	  <%= f.select(:hours, [1,2,3,4,5,6,7,8], prompt: true) %>
+  </div>
+
+  <div>
+	  <%= f.submit @work.new_record? ? "Create Work" : "Update Work" %>
+  </div >
+
+<% end %>

@@ -1,0 +1,25 @@
+<h1>Work Listing</h1>
+
+
+<table class="table table-hover table-bordered">
+	<tbody>
+		<tr>
+			<th>View</th>
+			<th>User</th>
+			<th>Project</th>
+			<th>Date/Time</th>
+			<th>Hours</th>
+		</tr>
+		<!-- Passing the 2nd parameter - @works to 'render partial' causes it to loop over @works and render the partial for each item in @works-->
+        <%= render partial: "work", collection: @works%>
+	</tbody>
+</table>
+
+</br>
+
+<% content_for :aside do %>
+   <td><%= link_to 'New Work', new_work_path %></td>
+<% end %>
+
+
+

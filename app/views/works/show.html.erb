@@ -1,0 +1,9 @@
+<h1><%= @work.datetimeperformed %></h1>
+<p>User: <%= @work.user.fname %> <%=@work.user.lname%></p>
+<p>Project: <%= @work.project.name %></p>
+<p>Hours: <%= @work.hours %></p>
+
+
+<p><%= link_to 'Edit Work Item', edit_work_path(@work)%></p>
+<p><%= link_to 'Back', works_path%></p>
+

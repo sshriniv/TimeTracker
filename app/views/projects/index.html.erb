@@ -1,0 +1,23 @@
+<h1>Project Listing</h1>
+
+<table class="table table-hover table-bordered">
+	<tbody>
+		<tr>
+			<th>Project</th>
+			<th>Company</th>
+		</tr>
+		<% @projects.each do |project| %>
+		<tr>
+			<!-- since to_s in project model returns name, we can direct use 'project' as 1st parameter in link_to instead of project.name-->
+			<td><%= link_to project, project %></td>
+			<td><%= link_to project.company.name, project.company %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+</br>
+<% content_for :aside do %>
+   <td><%= link_to 'New Project', new_project_path %></td>
+<% end %>
+

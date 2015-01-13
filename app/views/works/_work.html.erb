@@ -1,0 +1,8 @@
+<tr>
+	<!-- since to_s in project model returns name, we can direct use 'project' as 1st parameter in link_to instead of project.name-->
+	<td><%= link_to 'View', work %></td>
+	<td><%= work.user.lname %>, <%=work.user.fname %></td>
+	<td><%= link_to work.project.name, work.project %></td>
+	<td><%= work.datetimeperformed.strftime('%m/%d/%Y %H:%M') %></td>
+	<td><%= work.hours %></td>
+</tr>

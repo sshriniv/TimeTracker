@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one:
+ project: xyz
+ user: one
+ datetimeperformed: 2014-12-20 8:00
+ hours: 6
+#
+two:
+ project: xyz
+ user: one
+ datetimeperformed: 2014-12-21 8:00
+ hours: 5
+
+three:
+ project: xyz
+ user: one
+ datetimeperformed: 2014-12-22 8:00
+ hours: 10
+
+four:
+ project: internal
+ user: two
+ datetimeperformed: 2014-12-20 8:00
+ hours: 8
+
+five:
+ project: internal
+ user: two
+ datetimeperformed: 2014-12-21 8:00
+ hours: 2
+
+six:
+ project: another
+ user: three
+ datetimeperformed: 2014-12-21 8:00
+ hours: 7
+
+seven:
+ project: another
+ user: three
+ datetimeperformed: 2014-12-22 8:00
+ hours: 8
