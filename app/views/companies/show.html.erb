@@ -1,27 +1,30 @@
 <h1><%=@company.name%></h1>
 
 <br>
-<h2>Projects for <%=@company.name%>: </h2>
 
 <div class="panel panel-default">
+  <!-- Default panel contents -->
   <div class="panel-heading">Projects for <%=@company.name%></div>
-  <table>
-  	<tbody>
-  		<tr>
-  			<th>Project</th>
-  			<th>Default Rate</th>
-  		</tr>
-  		<% @company.projects.each do |project| %>
-  		<tr>
-  			<!-- since to_s in project model returns name, we can direct use 'project' as 1st parameter in link_to instead of project.name-->
-  			<td><%= link_to project, project %></td>
-  			<td><%= project.default_rate %></td>
-  		</tr>
-  		<% end %>
-  	</tbody>
+  <!-- Table -->
+  <table class="table">
+    <tbody>
+      <tr>
+         <th>Project</th>
+         <th>Default Rate</th>
+      </tr>
+        <% @company.projects.each do |project| %>
+      <tr>
+          <!-- since to_s in project model returns name, we can direct use 'project' as 1st parameter in link_to instead of project.name-->
+          <td><%= link_to project, project %></td>
+          <td><%= project.default_rate %></td>
+      </tr>
+        <% end %>
+      </tbody>
   </table>
-  </div>
 </div>
 
-<p><%= link_to 'Edit Company', edit_company_path(@company)%></p>
-<p><%= link_to 'Back', companies_path%></p>
+
+
+<%= link_to 'Edit Company', edit_company_path(@company), class: "btn btn-primary"%>
+<%= link_to 'Back', companies_path, class: "btn btn-primary"%>
+

@@ -18,8 +18,18 @@
       </div>
     </div>
 
-    <div>
-	    <%= f.submit @company.new_record? ? "Create Company" : "Update Company",class: "btn btn-primary" %>
-    </div >
+
+    <div class="container">
+      <div class = "row">
+        <div class="col-xs-3 pull-left">
+          <%= f.submit @company.new_record? ? "Create Company" : "Update Company",class: "btn btn-primary" %>
+        </div>
+
+
+        <div class="col-xs-4 pull-right">
+          <%= link_to 'Back', companies_path, class: "btn btn-primary"%>
+        </div>
+      </row>
+    </div>
 
   <% end %>
