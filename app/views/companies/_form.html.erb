@@ -9,7 +9,7 @@
    </div>
   <% end %>
 
-  <%= form_for(@company, html: {class: 'form-horizontal'}) do |f| %>
+  <%= simple_form_for(@company, html: {class: 'form-horizontal'}) do |f| %>
 
     <div class="field form-group">
       <%= f.label :name, class: 'col-xs-1 control-label' %>
@@ -17,6 +17,25 @@
         <%= f.text_field :name, class: 'form-control' %>
       </div>
     </div>
+
+    <div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+    </div>
+</div>
 
 
     <div class="container">

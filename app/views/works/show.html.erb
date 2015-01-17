@@ -4,6 +4,6 @@
 <p>Hours: <%= @work.hours %></p>
 
 
-<p><%= link_to 'Edit Work Item', edit_work_path(@work)%></p>
-<p><%= link_to 'Back', works_path%></p>
+<%= link_to 'Edit Work Item', edit_work_path(@work), class: "btn btn-primary"%>
+<%= link_to 'Back', works_path, class: "btn btn-primary"%>
 
