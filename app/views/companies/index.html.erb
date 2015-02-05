@@ -13,7 +13,9 @@
 	</tbody>
 </table>
 
+<%= link_to 'New Company', new_company_path(@company), class: "btn btn-primary"%>
+
 
 <% content_for :aside do %>
-   <td><%= link_to 'New Company', new_company_path %></td>
+   <%= link_to 'New Company', new_company_path %>
 <% end %>
