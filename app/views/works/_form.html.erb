@@ -5,7 +5,7 @@
   <div class="field form-group">
     <%= f.label :project_id, class: 'col-xs-1 control-label'%>
     <div class="col-xs-6">
-       <%= f.collection_select :project_id, Project.all, :id, :name, {prompt: "Select a Project"}, {class: "form-control", :disabled => "disabled"} %>
+       <%= f.collection_select :project_id, Project.all, :id, :name, {prompt: "Select a Project"}, {class: "form-control"} %>
     </div>
   </div>
 
