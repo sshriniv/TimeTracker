@@ -1,29 +1,37 @@
 
 <% doajax = false unless (defined? doajax) %>
-<%= form_for(@work, remote: doajax) do |f| %>
+<%= form_for(@work, html: {class: 'form-horizontal'}, remote: doajax) do |f| %>
 
   <div class="field form-group">
-    <%= f.label :project_id%>
-    <%= f.collection_select(:project_id, Project.all, :id, :name, prompt: true)%>
+    <%= f.label :project_id, class: 'col-xs-1 control-label'%>
+    <div class="col-xs-6">
+       <%= f.collection_select :project_id, Project.all, :id, :name, {prompt: "Select a Project"}, {class: "form-control", :disabled => "disabled"} %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :user_id, class: 'col-xs-1 control-label'%>
+    <div class="col-xs-6">
+      <%= f.collection_select :user_id, User.all, :id, :to_s, {prompt: "Select a User"}, {class: "form-control"} %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :datetimeperformed, class: 'col-xs-1 control-label'%>
+    <div class="col-xs-3">
+      <%= f.text_field :datetimeperformed,class: "datetimeperformed form-control" %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+	  <%= f.label :hours , class: 'col-xs-1 control-label'%>
+    <div class="col-xs-3">
+	    <%= f.select :hours, [1,2,3,4,5,6,7,8], {prompt: "Enter Hours"}, {class: "form-control"}  %>
+    </div>
   </div>
 
   <div>
-    <%= f.label :user_id%>
-    <%= f.collection_select(:user_id, User.all, :id, :to_s, prompt: true)%>
-  </div>
-
-    <div>
-    <%= f.label :datetimeperformed%>
-    <%= f.text_field :datetimeperformed,class: "datetimeperformed" %>
-  </div>
-
-  <div>
-	  <%= f.label :hours %>
-	  <%= f.select(:hours, [1,2,3,4,5,6,7,8], prompt: true) %>
-  </div>
-
-  <div>
-	  <%= f.submit @work.new_record? ? "Create Work" : "Update Work" %>
+	  <%= f.submit @work.new_record? ? "Create Work" : "Update Work" ,class: "btn btn-primary"%>
   </div >
 
 <% end %>
